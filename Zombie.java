@@ -169,171 +169,115 @@
                     return false;
                     }
         }
+         int time = 0;
+      GreenfootImage image = getImage();
         public void setDirection(int direction)
         {
+        
         this.direction = direction;
         switch(direction)
         {
+         
         case SOUTH:
            
+            time++;
             setImage("ZombieRight_1.png");
-            GreenfootImage image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_2.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_3.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_4.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_5.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_6.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_7.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_8.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_9.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_10.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_11.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_12.png");
-            image = getImage();
-            image.scale(50 , 50);
+             image = getImage();
+             image.scale(50 , 50);
+            if(time == 10)
+            {
+             setImage("ZombieRight_2.png");
+             image = getImage();
+             image.scale(50 , 50);
+            }
+            if(time == 30)
+            {
+             setImage("ZombieRight_5.png");
+             image = getImage();
+             image.scale(50 , 50);
+             time = 0;
+            }
+              setImage("ZombieRight_7.png");
+             image = getImage();
+             image.scale(50 , 50);
             break;
         case EAST :
-           
-            setImage("ZombieRight_1.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_2.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_3.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_4.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_5.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_6.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_7.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_8.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_9.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_10.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_11.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieRight_12.png");
-            image = getImage();
-            image.scale(50 , 50);
-        
+           time++;
+           setImage("ZombieRight_1.png");
+             image = getImage();
+             image.scale(50 , 50);
+             if(time == 10 )
+            {
+             setImage("ZombieRight_3.png");
+             image = getImage();
+             image.scale(50 , 50);
+            }
+            if(time == 30)
+            {
+             setImage("ZombieRight_8.png");
+             image = getImage();
+             image.scale(50 , 50);
+             time = 0;
+            }
+             setImage("ZombieRight_8.png");
+             image = getImage();
+             image.scale(50 , 50);
+               
             break;
             
         case WEST :
-            
-            setImage("ZombieLeft_1.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_2.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_3.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_4.png");
-            image = getImage();
-            image.scale(50 , 50);
+        time++;
+        setImage("ZombieLeft_1.png");
+             image = getImage();
+             image.scale(50 , 50);
+            if(time == 10)
+            {
+             setImage("ZombieLeft_2.png");
+             image = getImage();
+             image.scale(50 , 50);
+            }
+            if(time == 30)
+            {
+             setImage("ZombieLeft_6.png");
+             image = getImage();
+             image.scale(50 , 50);
+             time = 0;
+            }
             setImage("ZombieLeft_5.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_6.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_7.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_8.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_9.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_10.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_11.png");
-            image = getImage();
-            image.scale(50 , 50);
+             image = getImage();
+             image.scale(50 , 50);
             
         break;
         
         case NORTH : 
-            
+            time++;
             setImage("ZombieLeft_1.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_2.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_3.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_4.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_5.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_6.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_7.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_8.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_9.png");
-            image = getImage();
-            image.scale(50 , 50);
+             image = getImage();
+             image.scale(50 , 50);
+            if(time == 10)
+            {
+             setImage("ZombieLeft_3.png");
+             image = getImage();
+             image.scale(50 , 50);
+            }
+            if(time == 30)
+            {
+             setImage("ZombieLeft_7.png");
+             image = getImage();
+             image.scale(50 , 50);
+             time = 0;
+            }
             setImage("ZombieLeft_10.png");
-            image = getImage();
-            image.scale(50 , 50);
-            setImage("ZombieLeft_11.png");
-            image = getImage();
-            image.scale(50 , 50);
+             image = getImage();
+             image.scale(50 , 50);
         break;
         
         default :
+        time = 0;
         break;
     }
     }
-    ToMainMenu TMM = new ToMainMenu();
+
         public boolean foundPerson()
         {
         Actor person = getOneObjectAtOffset(0 , 0 , Person.class);
@@ -345,12 +289,12 @@
         if(person != null)
         {
         getWorld().removeObject(person);
-        MineEasy.time = 90;
+        
         
      
         Greenfoot.playSound("Scream.wav");
         MyWorld.sound.stop();
-        Greenfoot.setWorld(TMM);
+        Greenfoot.setWorld(new ToMainMenu());
         
         }
         }
