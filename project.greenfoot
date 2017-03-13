@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon Mar 13 01:02:22 ICT 2017
+#Mon Mar 13 21:18:23 ICT 2017
 target16.name=StartEasy
 class.MyWorld.image=old_gold_mine.png
 dependency35.to=Person
@@ -286,7 +286,7 @@ dependency22.to=Person
 dependency14.type=UsesDependency
 dependency11.from=MineEasy
 dependency61.type=UsesDependency
-class.HowToPlay.image=crumpled-paper.jpg
+class.HowToPlay.image=space1.jpg
 target18.y=310
 dependency18.from=ToMainMenu
 target18.x=110
