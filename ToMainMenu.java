@@ -21,5 +21,6 @@ public class ToMainMenu extends World
        addObject(new Back() , 537 , 344);
        addObject(new TryMore() , 103 , 375);
        //addObject(new TryAgain() , 100 , 100);
+       
     }
 }

@@ -16,7 +16,7 @@ public class ScoreBoard extends Actor
     public void act() 
     {
         // Add your action code here.
-        setImage(new GreenfootImage("GAME OVER  " +"\nScore: " + (Person.score) , 100 , Color.WHITE , Color.BLACK));
+        setImage(new GreenfootImage("GAME OVER  " +"\nScore: " + (Person.score) +"\nHigh Score: " + (Person.highScore) , 75 , Color.WHITE , Color.BLACK));
         getImage();
     }    
 }

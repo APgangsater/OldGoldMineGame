@@ -18,16 +18,16 @@ public class Back extends Actor
     setImage(image);
     image.scale(100 , 100);
     }
-    MyWorld MW = new MyWorld();
+   
     public void act() 
     {
         // Add your action code here.
         if(Greenfoot.mouseClicked(this))
         {
             Greenfoot.playSound("Clicking.wav");
-        Greenfoot.setWorld(MW);
+        Greenfoot.setWorld(new MyWorld());
         Person.score = 0;
-        MineEasy.time = 90;
+        
         }
     }    
 }

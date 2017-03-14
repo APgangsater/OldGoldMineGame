@@ -19,17 +19,19 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 380, 1); 
        //Greenfoot.playSound("Moaning.mp3");
-      int i = 0; 
+ 
       addObject(new Play() , 270 , 230);
-      if(i == 0)
+      
+      
+    }
+         int i = 0; 
+    public void act()
+    {
+        if(i == 0)
       {
       sound.play();
       i++;
     }
-      
-    }
-    public void act()
-    {
     
     }
 }

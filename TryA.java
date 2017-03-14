@@ -20,7 +20,7 @@ public class TryA extends Actor
         {
             Greenfoot.playSound("Clicking.wav");  
         Person.score = 0;
-        MineEasy.time = 90;
+        
         Greenfoot.setWorld(new MineEasy());
         }
         

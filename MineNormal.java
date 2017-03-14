@@ -53,7 +53,7 @@ public class MineNormal extends World
     }
      int timer = 40;
     int spawn = 0;
-    ToMainMenu TMM = new ToMainMenu();
+    
     public void act()
     {
          showText("Time : " + time , 8 , 0);
@@ -64,7 +64,7 @@ public class MineNormal extends World
             time --;
             if(time == 0)
             {
-            Greenfoot.setWorld(TMM);
+            Greenfoot.setWorld(new ToMainMenu());
             }
             if(spawn == 2)
             {
