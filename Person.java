@@ -17,9 +17,12 @@ public class Person extends Actor
      
      static int highScore = 0;
      static int score = 0;
+     static int pu=0;
+     static boolean in = false;
     public void act() 
     {
-        
+        CheckPo();
+        Po();
         getScore();
         checkKeypress();
         checkScore();
@@ -99,6 +102,23 @@ public class Person extends Actor
            setLocation(getX() , getY()+1);
             setImage("persondown.png");
         }
+        }
+    }
+    public void CheckPo(){
+        if(isTouching(Pwr.class)&&!in){
+            in = true;
+            removeTouching(Pwr.class);
+        }
+    }
+    public void Po(){
+        if(in){
+            pu++;
+            getImage().setTransparency(100);
+        }
+        if(pu>=30){
+            in=false;
+            getImage().setTransparency(255);
+            pu = 0;
         }
     }
     public void checkScore()

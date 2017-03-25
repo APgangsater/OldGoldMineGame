@@ -290,7 +290,7 @@
         public void kill()
         {
         Actor human = getOneObjectAtOffset(0 , 0 , Person.class);
-        if(human != null)
+        if(human != null&&!Person.in)
         {
         getWorld().removeObject(human);
         Greenfoot.playSound("Scream.wav");

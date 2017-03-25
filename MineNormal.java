@@ -58,6 +58,7 @@ public class MineNormal extends World
     {
          showText("Time : " + time , 8 , 0);
          showText("Score : " + Person.score , 8 , 2);
+           showText("Invincibility : " + Person.in , 8 , 4);
         if(timer == 0)
         {
             spawn++;
