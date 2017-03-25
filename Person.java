@@ -106,6 +106,7 @@ public class Person extends Actor
     }
     public void CheckPo(){
         if(isTouching(Pwr.class)&&!in){
+            Greenfoot.playSound("Go.mp3");
             in = true;
             removeTouching(Pwr.class);
         }
