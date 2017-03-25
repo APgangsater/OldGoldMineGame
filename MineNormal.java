@@ -53,11 +53,14 @@ public class MineNormal extends World
     }
      int timer = 40;
     int spawn = 0;
-    
+    int spn=60;
     public void act()
     {
          showText("Time : " + time , 8 , 0);
          showText("Score : " + Person.score , 8 , 2);
+           showText("Invincibility : " + Person.in , 8 , 4);
+            spwnPo();
+           spn++;
         if(timer == 0)
         {
             spawn++;
@@ -84,4 +87,17 @@ public class MineNormal extends World
     }
     timer -=2 ;
 }
+  public void spwnPo(){
+    int x,y;
+            
+                x = Greenfoot.getRandomNumber(10)+1;
+                y = Greenfoot.getRandomNumber(10)+1;
+                    if(getObjectsAt(x , y ,(Rock.class)).size() == 0&&getObjectsAt(x , y ,(Goldbar.class)).size() == 0&&getObjectsAt(x , y ,(Pwr.class)).size() == 0)
+            {
+                if(spn>=60){
+            addObject(new Pwr(), x, y);
+            spn=0;
+        }
+        }
+} 
 }
