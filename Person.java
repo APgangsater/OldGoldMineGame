@@ -23,6 +23,9 @@ public class Person extends Actor
      static int score = 0;
      static int pu=0;
      static boolean in = false;
+     public Person(){
+         in = false;
+        }
     public void act() 
     {
         CheckPo();
@@ -168,7 +171,7 @@ public class Person extends Actor
     public void death()
     {
     Actor zombie = getOneObjectAtOffset(0 , 0, Zombie.class);
-    if(zombie != null && isTouching(Zombie.class))
+    if(zombie != null && isTouching(Zombie.class) && !in)
     {
     getWorld().removeObject(this);
     Greenfoot.playSound("Scream.wav");
