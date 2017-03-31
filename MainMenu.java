@@ -20,7 +20,7 @@ public class MainMenu extends Actor
             Greenfoot.playSound("Clicking.wav");
         Person.score = 0;
      
-        Greenfoot.setWorld(new MyWorld());
+        Greenfoot.setWorld(new SelectMode());
         }
     }    
     public MainMenu()

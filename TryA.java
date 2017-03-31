@@ -21,7 +21,7 @@ public class TryA extends Actor
             Greenfoot.playSound("Clicking.wav");  
         Person.score = 0;
         
-        Greenfoot.setWorld(new MineEasy());
+        Greenfoot.setWorld(new MineEasy(MineEasy.level));
         }
         
     }   

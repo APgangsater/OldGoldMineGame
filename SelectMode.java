@@ -13,13 +13,14 @@ public class SelectMode extends World
      * Constructor for objects of class SelectMode.
      * 
      */
+    static int level;
     public SelectMode()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(500, 380, 1); 
-        addObject(new StartEasy() , 250 , 110);
-        addObject(new StartNormal() , 250 , 200);
-        addObject(new StartHard() , 250 , 290);
+        for(int i=0;i<3;i++){
+        addObject(new StartEasy(i) , 250 , 110+(90*i));
+    }
     }
    
 }
