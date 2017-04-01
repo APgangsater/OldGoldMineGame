@@ -23,8 +23,11 @@ public class Person extends Actor
      static int score = 0;
      static int pu=0;
      static boolean in = false;
-     public Person(){
-         in = false;
+     boolean dead;
+     boolean wrap = true;
+     public Person()
+     {
+        dead = false;
         }
     public void act() 
     {
@@ -34,10 +37,39 @@ public class Person extends Actor
         checkKeypress();
         checkScore();
         death();
+        if(dead == false)
+        {
+       wrap();
+    }
     }  
     
         
-
+    public void wrap()
+    {
+       
+        World myWorld = getWorld();
+        Actor person = getOneObjectAtOffset(0 , 0, Person.class);
+         
+     
+        if(dead == false){
+     if(isAtEdge() && this.getX() == 15 && wrap ==true)
+        {
+            if(person == null){
+        setLocation( 0 , getY());
+    }
+    
+        }
+        else
+        if(isAtEdge() && this.getX() == 0)
+        {
+            if(person == null)
+            {
+        setLocation( 15 , getY());
+        }
+    }
+        
+    }
+    }
      
    
     
@@ -171,8 +203,9 @@ public class Person extends Actor
     public void death()
     {
     Actor zombie = getOneObjectAtOffset(0 , 0, Zombie.class);
-    if(zombie != null && isTouching(Zombie.class) && !in)
+    if(zombie != null && isTouching(Zombie.class))
     {
+        dead = true;
     getWorld().removeObject(this);
     Greenfoot.playSound("Scream.wav");
     Greenfoot.setWorld(new ToMainMenu());
