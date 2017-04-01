@@ -18,26 +18,48 @@ public class Person extends Actor
      static final int west = 1;
      static final int north = 2;
      static final int south = 3;
-     
+     static String high ;
+     static String name;
      static int highScore = 0;
-     static int score = 0;
-     static int pu=0;
-     static boolean in = false;
-     public Person(){
-         in = false;
+     static int score;
+     static int pu;
+     static boolean in;
+     boolean dead;
+     public Person()
+     {
+            this(0,0,false,false);
+
+      
         }
-    public void act() 
+             public Person(int score,int pu,boolean in,boolean dead){
+                   Ask(); // getting the name from the user.
+            this.score = score;
+            this.pu = pu;
+            this.in = in;
+            this.dead = dead;
+        }
+   public void act() 
     {
         CheckPo();
         Po();
         getScore();
         checkKeypress();
         checkScore();
-        death();
+       
+    
     }  
     
         
-
+    public void Ask(){// To get User's name
+                         while(true){
+ String x =Greenfoot.ask("Please input your name? (8 characters maximum )"); 
+ if(x.length()<=8){
+     name =x; 
+     break;
+    }
+}
+        
+    }
      
    
     
@@ -102,53 +124,72 @@ public class Person extends Actor
         
     }
     
-    public void checkKeypress()
+    public void checkKeypress()//Check if the specify key is press.
     {
         int whichWay;
+  
         if (Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("D")) 
         {
             whichWay = 0;
             setImage("personright.png" );
-            if (canYouMove(whichWay) == true){
-            moveYou(whichWay);
-        }
+            if(getX()==15&&getWorld().getObjectsAt(0,getY(),Rock.class).isEmpty()){ //warp if warpable and there are no rocks in the way.
+                 setLocation( 0 , getY());
+            }
+     else if (canYouMove(whichWay) == true){
+ 
+                moveYou(whichWay);}
+      
     }
         if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("A")) 
         {
             whichWay = 1;
             setImage("personleft.png");
-            if (canYouMove(whichWay) == true){
-                moveYou(whichWay);
+            
+             if(getX()==0&&getWorld().getObjectsAt(16,getY(),Rock.class).isEmpty()){//warp if warpable and there are no rocks in the way.
+                 setLocation( 16 , getY());
             }
+     else if (canYouMove(whichWay) == true){
+ 
+                moveYou(whichWay);}
+    
         }
     if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("W")) 
         {
             whichWay = 2;
             setImage("personup.png");
-            if (canYouMove(whichWay) == true){
-            moveYou(whichWay);
-        }
+         
+           
+              if(getY()==0&&getWorld().getObjectsAt(getX(),15,Rock.class).isEmpty()){ //warp if warpable and there are no rocks in the way.
+                 setLocation( getX(),15);
+            }
+     else if (canYouMove(whichWay) == true){
+ 
+                moveYou(whichWay);}
     }
         if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("S")) 
         {
             whichWay = 3;
             setImage("persondown.png");
-            if (canYouMove(whichWay) == true){
-            moveYou(whichWay);
-        }
+             
+          if(getY()==15&&getWorld().getObjectsAt(getX(),0,Rock.class).isEmpty()){ //warp if warpable and there are no rocks in the way.
+                 setLocation( getX(),0);
+            }
+     else if (canYouMove(whichWay) == true){
+ 
+                moveYou(whichWay);}
         }
     }
             
     
     
-    public void CheckPo(){
+    public void CheckPo(){ // For collecting power ups
         if(isTouching(Pwr.class)&&!in){
             Greenfoot.playSound("Go.mp3");
             in = true;
             removeTouching(Pwr.class);
         }
     }
-    public void Po(){
+    public void Po(){ //Transparency when pick up power ups
         if(in){
             pu++;
             getImage().setTransparency(100);
@@ -159,20 +200,30 @@ public class Person extends Actor
             pu = 0;
         }
     }
-    public void checkScore()
+    public void checkScore() //check the highest score.
     {
-    if(score > highScore)
+        
+   
+     if(score > highScore)
     {
+        high =name;
     highScore = score;
     }
+    else if(high==null){
+      high =name;
+    }
+
     }
     
    
     public void death()
     {
     Actor zombie = getOneObjectAtOffset(0 , 0, Zombie.class);
-    if(zombie != null && isTouching(Zombie.class) && !in)
+    if(zombie != null && isTouching(Zombie.class)&&!in) 
     {
+           
+        dead = true;
+          checkScore();
     getWorld().removeObject(this);
     Greenfoot.playSound("Scream.wav");
     Greenfoot.setWorld(new ToMainMenu());

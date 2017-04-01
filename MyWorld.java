@@ -24,15 +24,9 @@ public class MyWorld extends World
 
       
     }
-         int i = 0; 
-    public void act()
+    public void started()
     {
-        if(i == 0)
-      {
-      sound.play();
-      i++;
-    }
-    
+      sound.playLoop();
     }
 }
 

@@ -16,15 +16,16 @@ public class TryA extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this))
-        {
-            Greenfoot.playSound("Clicking.wav");  
-        Person.score = 0;
-        
-        Greenfoot.setWorld(new MineEasy(MineEasy.level));
-        }
+     checkCk();
         
     }   
+    public void checkCk(){// Check if this object has been clicked or not.
+          if(Greenfoot.mouseClicked(this))//If clicked, create a world with the specific level.
+        {
+            Greenfoot.playSound("Clicking.wav");  
+        Greenfoot.setWorld(new MineEasy(MineEasy.level));
+        } 
+    }
     public TryA()
     {
     GreenfootImage image = getImage();
