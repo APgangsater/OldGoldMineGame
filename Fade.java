@@ -13,7 +13,7 @@ public class Fade extends Actor
      */
         GreenfootImage image = new  GreenfootImage(500, 380);
         int x ;
-    public Fade(){
+    public Fade(){// Create a black rectangle with 0 transparency.
         x=0;
 image.setColor(java.awt.Color.BLACK);
 image.fill();
@@ -22,14 +22,17 @@ setImage(image);
     }
     public void act() 
     {
-        if(x<250){
+      fadeOut();
+      
+       
+    }    
+    public void fadeOut(){ //Fading out
+          if(x<250){
             x+=10; 
               image.setTransparency(x);
         }
         else{
             Greenfoot.setWorld(new MineEasy(SelectMode.level));
         }
-      
-       
-    }    
+    }
 }

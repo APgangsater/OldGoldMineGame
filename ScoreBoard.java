@@ -13,10 +13,8 @@ public class ScoreBoard extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public void act() 
-    {
-        // Add your action code here.
-        setImage(new GreenfootImage("GAME OVER  " +"\nScore: " + (Person.score) +"\nHigh Score: " + (Person.highScore) , 75 , Color.WHITE , Color.BLACK));
-        getImage();
-    }    
+    public ScoreBoard(){
+        setImage(new GreenfootImage("GAME OVER  " +"\nTop Player: "+Person.high +"  High Score: " + (Person.highScore)+"\nPlayer: "+Person.name +"  Score: " + (Person.score), 30 , Color.WHITE , Color.BLACK));
+        getImage();  
+    }   
 }
