@@ -15,18 +15,21 @@ public class MainMenu extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this))//To check if click the world will change to Selectmode
-        {
-            Greenfoot.playSound("Clicking.wav");
-        Person.score = 0;
+        check();
      
-        Greenfoot.setWorld(new SelectMode());
-        }
     }    
     public MainMenu()
     {
-    GreenfootImage image = getImage();
-    setImage(image);
-    image.scale(250 , 250);
+    GreenfootImage image = getImage(); // get the image and set it into "image".
+    setImage(image); // set the image.
+    image.scale(250 , 250); // scale the size of the image.
+    }
+    public void check(){
+       if(Greenfoot.mouseClicked(this))//To check if click the world will change to Selectmode
+        {
+            Greenfoot.playSound("Clicking.wav"); //play the clicking sound.
+     
+        Greenfoot.setWorld(new SelectMode()); // set a new world.
+        }
     }
 }
