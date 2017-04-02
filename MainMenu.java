@@ -15,7 +15,7 @@ public class MainMenu extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this))//To check if click the world will change to Selectmode
         {
             Greenfoot.playSound("Clicking.wav");
         Person.score = 0;
