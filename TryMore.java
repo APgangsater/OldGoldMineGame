@@ -17,7 +17,7 @@ public class TryMore extends Actor
         // Add your action code here.
         setImage(new GreenfootImage("Try Again?" , 50 , Color.WHITE , Color.BLACK));
         getImage();
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this))//To check if the mouse clicked 
         {
         Greenfoot.playSound("Clicking.wav");   
         Greenfoot.setWorld(new SelectMode());
