@@ -24,9 +24,9 @@ public class MyWorld extends World
 
       
     }
-    public void started()
+    public void started() // when started, play the sound in loop.
     {
-      sound.playLoop();
+      sound.playLoop(); 
     }
 }
 
