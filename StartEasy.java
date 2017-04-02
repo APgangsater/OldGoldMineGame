@@ -15,8 +15,8 @@ public class StartEasy extends Actor
    String o [] = {"Start_Easy.png","Start_Normal.png","Start_Hard.png"}; //Images for the buttons.
    int ok;
    public StartEasy(int y){
-      setImage(o[y]); 
-       ok =y;
+      setImage(o[y]); // set the image by using the string array "o".
+       ok =y; // set the levl for each buttons.
     }
     public void act() 
     {
@@ -27,8 +27,9 @@ public class StartEasy extends Actor
        if(Greenfoot.mouseClicked(this))
         {
         Greenfoot.playSound("Clicking.wav");   
-              getWorld().addObject(new Fade(),getWorld().getWidth()/2,getWorld().getHeight()/2);
-       SelectMode.level =ok;
+              getWorld().addObject(new Fade(),getWorld().getWidth()/2,getWorld().getHeight()/2); // add the fading effect .
+       SelectMode.level =ok; // set the level.
         }  
     }
+
 }
