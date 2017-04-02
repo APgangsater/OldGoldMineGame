@@ -63,7 +63,7 @@ public class Person extends Actor
      
    
     
-    public void moveYou(int dir)
+    public void moveYou(int dir) // to move your character
     {
         
         if (dir==0){
@@ -84,7 +84,7 @@ public class Person extends Actor
             }
         }
 
-        public boolean canYouMove(int canYou)
+        public boolean canYouMove(int canYou) // to check the obstacle
         {
         
         World myWorld = getWorld();
@@ -216,7 +216,7 @@ public class Person extends Actor
     }
     
    
-    public void death()
+    public void death() // to check if you touch zombie the game will be over
     {
     Actor zombie = getOneObjectAtOffset(0 , 0, Zombie.class);
     if(zombie != null && isTouching(Zombie.class)&&!in) 
@@ -231,7 +231,7 @@ public class Person extends Actor
     }
     
     
-    public void getScore()
+    public void getScore()// to get the score when you collect the gold bars
     {
         Actor goldBar = getOneObjectAtOffset(0, 0, Goldbar.class);
         if(goldBar != null)
