@@ -17,7 +17,7 @@ public class NextPlay extends Actor
         // Add your action code here.
         setImage(new GreenfootImage("NEXT" , 100 , Color.WHITE , Color.BLACK));
         getImage();
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this))//to check if mouse click the world will change to selection mode
         {
         Greenfoot.playSound("Clicking.wav");   
         Greenfoot.setWorld(new SelectMode());
