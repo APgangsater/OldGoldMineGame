@@ -15,7 +15,7 @@ public class Play extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this)) //to check if you click the sound will ring
         {
         Greenfoot.playSound("Clicking.wav");   
         Greenfoot.setWorld(new HowToPlay());
