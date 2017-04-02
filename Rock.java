@@ -14,6 +14,7 @@ public class Rock extends Actor
      */
     public Rock()
     {
+    //set and scale the size of the image
     GreenfootImage image = getImage();
     setImage(image);
     image.scale(35 , 35);
