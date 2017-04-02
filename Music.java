@@ -14,9 +14,9 @@ public class Music extends Actor
      */
     public Music()
     {
-    GreenfootImage image = getImage();
-    setImage(image);
-    image.scale(60 , 60);
+    GreenfootImage image = getImage(); // get the image and set it into "image".
+    setImage(image); // set the image.
+    image.scale(60 , 60); // scale the image size.
     
     }
     String image1 = "Sound.png";
@@ -24,16 +24,19 @@ public class Music extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this))
+        check();
+    } 
+    public void check(){ //To check if this object has been clicked, est the image and stop the scenario.
+       if(Greenfoot.mouseClicked(this))
         {
         setImage(image2);
         GreenfootImage image = getImage();
         image.scale(60, 60);
-        Greenfoot.stop();
+        Greenfoot.stop(); // stop the scenario.
         }
-    } 
+    }
     public void play()
     {
-    Greenfoot.playSound("Moaning.mp3");
+    Greenfoot.playSound("Moaning.mp3"); // play the moarning sound.
     }
 }
