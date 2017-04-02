@@ -19,7 +19,7 @@ public class MineEasy extends World
     int timer = 40;
     int spawn = 0;
         int spn; // delay between spawning a power up.
-    public MineEasy(int level)
+    public MineEasy(int level) //To get Level of game there are easy , normal , hard
     {    
         // Create a new world with 16x16 cells with a cell size of 32x32 pixels.
         super(16, 16, 32); 
@@ -31,7 +31,7 @@ public class MineEasy extends World
            
     }
 
-    public void act()
+    public void act() 
     {
          showText("Time : " + time , 8 , 0); // Show the time.
          showText("Score : " + Person.score , 8 , 2); // Show the player's score.
@@ -41,7 +41,7 @@ public class MineEasy extends World
     spwner();
     timer -=2 ;
 }
-public void spwner(){
+public void spwner(){ //To spawn power up
       if(timer == 0)
         {
             spawn++;
