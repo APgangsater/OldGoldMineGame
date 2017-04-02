@@ -187,7 +187,7 @@ public void deterLe(){ //check which level is selected and create the needed obj
     }
     
 }
-  public void spwnPo(){
+  public void spwnPo(){ //To spawn power up
     int x,y;
             
                 x = Greenfoot.getRandomNumber(10)+1;
