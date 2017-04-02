@@ -28,7 +28,7 @@
        
        public void act()
        {
-        if(canItMove())
+        if(canItMove()) 
         {
         moving();
         }
@@ -38,7 +38,7 @@
         kill();
         }
        
-       boolean canItMove()
+       boolean canItMove()//to check can zombies move
        {
         World world = getWorld();
         int dx = getX();
@@ -70,7 +70,7 @@
                 return false;
                 }
             List rocks = world.getObjectsAt(dx, dy , Rock.class);
-            if(rocks.isEmpty())
+            if(rocks.isEmpty())// to check is there any obstacle in front of them
             {
             return true;
             }
@@ -79,7 +79,7 @@
             return false;
             }
         }
-        public void turn()
+        public void turn() //to turn when they face an obstacle
         {
         int randomTurnTimes = Greenfoot.getRandomNumber(3) + 1;
         int p = 0;
@@ -99,7 +99,7 @@
         }
         }
         }
-       public void turnRight()
+       public void turnRight()// turn right
        {
         if(dir == WEST)
         {
@@ -121,7 +121,7 @@
                 setDirection(EAST);
                 }
         }
-       public void turnLeft()
+       public void turnLeft() // turn left
        {
         if(dir == WEST)
         {
@@ -143,7 +143,7 @@
                             setDirection(WEST);
                             }
         }
-       public void moving()
+       public void moving() // auto moving
        {
            if(!canItMove())
            {
@@ -180,7 +180,7 @@
       GreenfootImage zombieLeft5 = new GreenfootImage("ZombieLeft_5.png");
       GreenfootImage zombieLeft7 = new GreenfootImage("ZombieLeft_7.png");
       
-        public void setDirection(int dir)
+        public void setDirection(int dir) //To set images of zombie
         {
       zombieRight1.scale(50, 50);
       zombieRight2.scale(50, 50);
@@ -287,7 +287,7 @@
 
     }
 }
-        public void kill()
+        public void kill() //To check if zombie touch person 
         {
         Actor human = getOneObjectAtOffset(0 , 0 , Person.class);
         if(human != null&&!Person.in)
