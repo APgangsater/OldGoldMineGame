@@ -12,7 +12,7 @@ public class Back extends Actor
      * Act - do whatever the Back wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Back()
+    public Back() //To make image.
     {
     GreenfootImage image = getImage();
     setImage(image);
@@ -22,11 +22,10 @@ public class Back extends Actor
     public void act() 
     {
         // Add your action code here.
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this))//When this object is clicked.
         {
-            Greenfoot.playSound("Clicking.wav");
-        Greenfoot.setWorld(new MyWorld());
-        Person.score = 0;
+            Greenfoot.playSound("Clicking.wav"); //Play this Sound.
+        Greenfoot.setWorld(new MyWorld()); //Set the world MyWorld.
         
         }
     }    
