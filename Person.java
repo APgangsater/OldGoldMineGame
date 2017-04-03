@@ -14,10 +14,10 @@ public class Person extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-     static final int east = 0;
-     static final int west = 1;
-     static final int north = 2;
-     static final int south = 3;
+     static final int east = 0; // direction
+     static final int west = 1; //direction
+     static final int north = 2; // direction
+     static final int south = 3; // direction
      static String high ; // highest score name.
      static String name; // current player name.
      static int highScore = 0; // highest score.
@@ -66,19 +66,19 @@ public class Person extends Actor
     public void moveYou(int dir) // to move your character
     {
         
-        if (dir==0){
+        if (dir==0){ //if you go right
             setLocation(getX() + 1, getY());
                 
             }
-        if (dir==1){
+        if (dir==1){ //if you go left
             setLocation(getX() - 1, getY());
                 
             }
-        if (dir==2){
+        if (dir==2){ //if you go up
             setLocation(getX(), getY() - 1);
                 
             }
-        if (dir==3){
+        if (dir==3){ //if you go down
             setLocation(getX(), getY() + 1);
                 
             }
@@ -91,31 +91,31 @@ public class Person extends Actor
         int x = getX();
         int y = getY();
         
-        if (canYou==0){
+        if (canYou==0){ // check obstacle at east
             x++;
                 
             }
-        if (canYou==1){
+        if (canYou==1){ // check obstacle at west
             x--;
                 
             }
-        if (canYou==2){
+        if (canYou==2){ // check obstacle at north
             y--;
                 
             }
-        if (canYou==3){
+        if (canYou==3){ // check obstacle at south
             y++;
                 
             }
         
-        if (x >= myWorld.getWidth() || y >= myWorld.getHeight()) {
+        if (x >= myWorld.getWidth() || y >= myWorld.getHeight()) { //if you go farther than the world length and width
             return false;
         }
-        else if (x < 0 || y < 0) {
+        else if (x < 0 || y < 0) { //if you go farther than the world length and width
             return false;
         }
         List rocks = myWorld.getObjectsAt(x, y, Rock.class);
-        if(rocks.isEmpty()) {
+        if(rocks.isEmpty()) { //to check is there any rock on the next of your moving
             return true;
         }
         else {
@@ -126,7 +126,7 @@ public class Person extends Actor
     
     public void checkKeypress()//Check if the specify key is press.
     {
-        int whichWay;
+        int whichWay; // to know what way you choose
   
         if (Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("D"))  // move to the right if the specific key is pressed.
         {
