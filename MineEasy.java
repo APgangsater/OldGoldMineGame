@@ -34,8 +34,8 @@ public class MineEasy extends World
     public void act() 
     {
          showText("Time : " + time , 8 , 0); // Show the time.
-         showText("Score : " + Person.score , 8 , 2); // Show the player's score.
-          showText("Invincibility : " + Person.in , 8 , 4); // Show the current state of invincibility.
+         showText("Score : " + Person.score , 14 ,15); // Show the player's score.
+          showText("Invincibility : " + Person.in , 3 , 15); // Show the current state of invincibility.
    spwnPo(); // see spwnPo method.
           spn++;
     spwner();
